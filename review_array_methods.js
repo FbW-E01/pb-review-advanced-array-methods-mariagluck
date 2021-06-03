@@ -34,7 +34,6 @@ const webList = [
 ]
 
 
-
 // 2. Then based on the array, create a new array that contains just the names.
 
 const webListNames = webList.map(n => n.name);
@@ -56,13 +55,15 @@ console.log(webListNames);
 
 
 // 3. Go through the array and check each individual URL property - if the URL starts with "http", print the URL. Otherwise, print "Invalid URL for" and the value of the name property.
+const string = "hola que bueno que viniste";
 
-webList.filter(function(x) {
+
+webList.forEach(function(x) {
     if (x.URL.indexOf("http") >= 0) {
-    console.log(x.URL);
+      console.log(x.URL);
 
     } else {
-    console.log(`Invalid URL for ${x.name}`);
+      console.log(`Invalid URL for ${x.name}`);
     } 
 });
 
@@ -78,13 +79,13 @@ webList.filter(function(x) {
 // http://www.murphy.org
 // https://www.elbertCruickshank.edu
 
-
+console.log("------------------------")
 // 4. Sort the array based on the "number" property to a random order.
 
-const orderRandomly = webList.sort(() => Math.random() - 0.5);
+console.log(webList.sort(() => Math.random() - 0.5));
 //this is to shuffle the array list
-console.log(orderRandomly); 
 
+console.log("------------------------")
 
 // 5. Sort the array based on the "number" property, with the lowest number first.
 
@@ -95,26 +96,26 @@ const WebListMinToMax = webList.sort(function(a, b) {
 
 console.log(WebListMinToMax);
 
-
-
+console.log("------------------------")
 // 6. Sort the array based on the "number" property, with the highest number first.
 
-const WebListMaxToMin = webList.sort(function(a, b) {
+const webListMaxToMin = webList.sort(function(a, b) {
     return b.number - a.number;
 });
 //this will order the array sorting the key-value number: from  biggest to smallest
-console.log(WebListMaxToMin);
+console.log(webListMaxToMin);
 
-
+console.log("------------------------")
 // 7. Based on the array, create a string with all of the names of the people in the array separated by a comma and then replace the last comma with the string `" and "`.
 
 const webListNames1 = webList.map(n => n.name);
 //recovering the array of names I did above
 
-let lastName = webListNames1.pop();
+const lastName = webListNames1.pop();
 console.log(webListNames1.join(", ")+" and "+ lastName);
 //prints:
 //Kobe Schimmel, Randy Steuber, Forest Lehner, Angeline Harber, Elbert Cruickshank, Garrick Murphy, Estefania Robel, Donnell Rowe, Alaina Carroll and Mara Collins
+
 
 
 
